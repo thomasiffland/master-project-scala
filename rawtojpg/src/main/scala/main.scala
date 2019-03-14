@@ -73,7 +73,7 @@ object WebServer {
 
   def greyscaleImage(jpg: File): Array[Byte] = {
     val client = HttpClientBuilder.create.build
-    val post = new HttpPost("http://localhost:8081/grayscale")
+    val post = new HttpPost("http://grayscale:8081/grayscale")
     val fileBody = new FileBody(jpg, ContentType.DEFAULT_BINARY)
     val builder = MultipartEntityBuilder.create
     builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE)

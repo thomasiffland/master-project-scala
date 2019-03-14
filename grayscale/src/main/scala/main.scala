@@ -80,7 +80,7 @@ object WebServer {
 
   def resizeGrayscaleImage(grayscaleImage: File, size: String): Array[Byte] = {
     val client = HttpClientBuilder.create.build
-    val post = new HttpPost("http://localhost:8083/resize")
+    val post = new HttpPost("http://resize:8083/resize")
     val fileBody = new FileBody(grayscaleImage, ContentType.DEFAULT_BINARY)
     val sizeStringBody = new StringBody(size, ContentType.MULTIPART_FORM_DATA)
     val builder = MultipartEntityBuilder.create

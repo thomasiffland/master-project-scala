@@ -81,7 +81,7 @@ object WebServer {
 
   def generateSizeString(jpg: File, percent: String): String = {
     val client = HttpClientBuilder.create.build
-    val post = new HttpPost("http://localhost:8082/exifdata/filtered")
+    val post = new HttpPost("http://exifdata:8082/exifdata/filtered")
     val fileBody = new FileBody(jpg, ContentType.DEFAULT_BINARY)
     val filterBody = new StringBody("Image Height", ContentType.DEFAULT_BINARY)
     val builder = MultipartEntityBuilder.create
